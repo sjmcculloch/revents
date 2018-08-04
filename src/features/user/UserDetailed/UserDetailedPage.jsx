@@ -8,6 +8,7 @@ import UserDetailedEvents from "./UserDetailedEvents";
 import UserDetailedHeader from "./UserDetailedHeader";
 import UserDetailedPhotos from "./UserDetailedPhotos";
 import UserDetailedSidebar from "./UserDetailedSidebar";
+import UserDetailedInfo from "./UserDetailedInfo";
 import { userDetailedQuery } from "../userQueries";
 import LoadingComponent from "../../../app/layout/LoadingComponent";
 import {
@@ -85,6 +86,7 @@ class UserDetailedPage extends Component {
     return (
       <Grid>
         <UserDetailedHeader loading={loading} profile={profile} />
+        <UserDetailedInfo profile={profile} />
         <UserDetailedSidebar
           unfollowUser={unfollowUser}
           isFollowing={isFollowing}

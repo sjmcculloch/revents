@@ -205,14 +205,18 @@ class EventForm extends Component {
               >
                 Cancel
               </Button>
-              <Button
-                disabled={loading}
-                type="button"
-                color={event.cancelled ? "green" : "red"}
-                onClick={() => cancelToggle(!event.cancelled, event.id)}
-                floated="right"
-                content={event.cancelled ? "Reactivate Event" : "Cancel event"}
-              />
+              {event.id && (
+                <Button
+                  disabled={loading}
+                  type="button"
+                  color={event.cancelled ? "green" : "red"}
+                  onClick={() => cancelToggle(!event.cancelled, event.id)}
+                  floated="right"
+                  content={
+                    event.cancelled ? "Reactivate Event" : "Cancel event"
+                  }
+                />
+              )}
             </Form>
           </Segment>
         </Grid.Column>
